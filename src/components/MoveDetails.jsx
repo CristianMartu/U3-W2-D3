@@ -67,8 +67,8 @@ const MoveDetails = () => {
       <div>
         <h3 className="text-center my-3">Ratings</h3>
         <div className="d-flex justify-content-between w-75 mx-auto">
-          {film.Ratings.map((rate) => (
-            <div>
+          {film.Ratings.map((rate, i) => (
+            <div key={i}>
               <h5>{rate.Source}</h5>
               <p className="fs-6 fw-light">{rate.Value}</p>
             </div>

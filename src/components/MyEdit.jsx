@@ -1,5 +1,3 @@
-import logo from '../assets/logo.png'
-
 const MyEdit = () => (
   <div className="container">
     <div className="container edit-profile stretch text-white pt-4">
@@ -17,7 +15,7 @@ const MyEdit = () => (
         </div>
         <div className="account-Choices">
           <h4 className="user-name">Strive Student</h4>
-          <label forHtml="language">
+          <label htmlFor="language">
             <h5>Language:</h5>
           </label>
 
@@ -38,11 +36,11 @@ const MyEdit = () => (
           <hr />
           <h5>Autoplay controls</h5>
           <label className="checkboxBox">
-            <input type="checkbox" className="btn" checked="checked" />
+            <input type="checkbox" className="btn" defaultChecked="true" />
             Autoplay next episode in a series on all devices.
           </label>
           <label className="checkboxBox">
-            <input type="checkbox" checked="checked" />
+            <input type="checkbox" defaultChecked="true" />
             Autoplay previews while browsing on all devices.
           </label>
         </div>
