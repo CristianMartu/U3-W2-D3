@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, Collapse, Container, Image, Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import MySpinner from './MySpinner'
 
 const URL = 'http://www.omdbapi.com/?apikey=956e8978&i='
 const MoveDetails = () => {
@@ -121,11 +122,7 @@ const MoveDetails = () => {
       </div>
     </Container>
   ) : (
-    <div className="d-flex justify-content-center">
-      <Spinner variant="secondary" animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    </div>
+    <MySpinner />
   )
 }
 export default MoveDetails

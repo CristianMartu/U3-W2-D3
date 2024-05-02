@@ -6,8 +6,8 @@ import './App.css'
 import MyNavbar from './components/MyNav'
 import MyFooter from './components/MyFooter'
 import MyMain from './components/MyMain'
-// import MyEdit from './components/MyEdit'
-// import MySettings from './components/MySettings'
+import MyEdit from './components/MyEdit'
+import MySettings from './components/MySettings'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MyCarouselSlick from './components/MyCarouselSlick'
@@ -32,23 +32,14 @@ function App() {
                 </Container>
               }
             />
+            <Route path="/settings" element={<MySettings className="bg-white" />} />
+            <Route path="/edit" element={<MyEdit className="bg-white" />} />
             <Route path="/movie-details/:movieId" element={<MoveDetails />} />
           </Routes>
           <MyFooter />
         </Container>
       </BrowserRouter>
     </div>
-
-    // Netflix Edit
-    // <div className="App">
-    //   <MyEdit />
-    // </div>
-
-    // Netflix Settings
-    //   <div className="App bg-white">
-    //     <MyNavbar />
-    //     <MySettings />
-    //   </div>
   )
 }
 

@@ -1,4 +1,4 @@
-import { Container, Image, Nav, Navbar } from 'react-bootstrap'
+import { Container, Dropdown, DropdownButton, Image, Nav, Navbar } from 'react-bootstrap'
 import logo from '../assets/logo.png'
 import { NavLink } from 'react-router-dom'
 
@@ -30,9 +30,29 @@ const MyNavbar = (props) => (
         </div>
         <div className="d-flex align-items-center">
           <i className="bi bi-search icons"></i>
-          <div id="kids" className="fw-bold">
+          {/* <div id="kids" className="fw-bold">
             KIDS
-          </div>
+          </div> */}
+          <DropdownButton id="dropdown-basic-button" title="KIDS" variant="dark">
+            <Dropdown.Item href="#/action-1">
+              <i className="bi bi-person-circle icons ms-0"></i>
+              <span className="fs-6 fst-italic">Your Name</span>
+            </Dropdown.Item>
+            <Dropdown.Item href="#/action-2">
+              <NavLink to="/edit" className="nav-link active">
+                Account
+              </NavLink>
+            </Dropdown.Item>
+            <Dropdown.Item href="#/action-3">
+              <NavLink to="/settings" className="nav-link active">
+                Manage profiles
+              </NavLink>
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item eventKey="4" className="text-danger">
+              Sign out of Netflix
+            </Dropdown.Item>
+          </DropdownButton>
           <i className="bi bi-bell icons"></i>
           <i className="bi bi-person-circle icons"></i>
         </div>

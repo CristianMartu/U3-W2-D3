@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Alert, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
+import MySpinner from './MySpinner'
 
 const URL = 'http://www.omdbapi.com/?apiKey=956e8978&s='
 const MyCarouselSlick = (props) => {
@@ -104,7 +105,7 @@ const MyCarouselSlick = (props) => {
     ],
   }
 
-  return (
+  return !loading ? (
     <Slider {...settings} style={{ height: '360px' }}>
       {search.map((item) => {
         return error === true ? (
@@ -134,6 +135,8 @@ const MyCarouselSlick = (props) => {
         )
       })}
     </Slider>
+  ) : (
+    <MySpinner />
   )
 }
 

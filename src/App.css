@@ -149,4 +149,6 @@ nav {
 }
 #account {
   height: calc(100vh - 105px);
+  background-color: white;
+  border-radius: 20px;
 }

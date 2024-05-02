@@ -2,11 +2,6 @@ import logo from '../assets/logo.png'
 
 const MyEdit = () => (
   <div className="container">
-    <header>
-      <a class="logo" href="index.html">
-        <img src={logo} width="100" height="55" alt="Netflix logo" loading="lazy" />
-      </a>
-    </header>
     <div className="container edit-profile stretch text-white pt-4">
       <h3>Edit Profile</h3>
       <hr />
@@ -22,7 +17,7 @@ const MyEdit = () => (
         </div>
         <div className="account-Choices">
           <h4 className="user-name">Strive Student</h4>
-          <label for="language">
+          <label forHtml="language">
             <h5>Language:</h5>
           </label>
 
