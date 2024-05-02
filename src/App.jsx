@@ -26,9 +26,9 @@ function App() {
               element={
                 <Container fluid className="px-4">
                   <h4>Series</h4>
-                  <MyCarouselSlick filmName="series" type="series" page="6" />
+                  <MyCarouselSlick filmName="series" type="series" page="1" />
                   <h4>Game</h4>
-                  <MyCarouselSlick filmName="star wars" type="game" page="4" />
+                  <MyCarouselSlick filmName="star wars" type="game" page="1" />
                 </Container>
               }
             />
