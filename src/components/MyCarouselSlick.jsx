@@ -5,7 +5,7 @@ import Slider from 'react-slick'
 import MySpinner from './MySpinner'
 
 const URL = 'http://www.omdbapi.com/?apiKey=956e8978&s='
-const MyCarouselSlick = (props) => {
+const MyCarouselSlick = ({ filmName, type, page }) => {
   const [search, setSearch] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -52,10 +52,10 @@ const MyCarouselSlick = (props) => {
 
   useEffect(() => {
     const listImg = []
-    for (let i = 1; i <= props.page; i++) {
-      handleSearch(props.filmName + `&page=${i}&type=${props.type}`, listImg)
+    for (let i = 1; i <= page; i++) {
+      handleSearch(filmName + `&page=${i}&type=${type}`, listImg)
     }
-  }, [])
+  }, [filmName, page, type])
 
   const settings = {
     infinite: true,

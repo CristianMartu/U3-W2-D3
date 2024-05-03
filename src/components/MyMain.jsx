@@ -1,7 +1,7 @@
 import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap'
 import MyCarouselSlick from './MyCarouselSlick'
 
-const MyMain = () => {
+const MyMain = ({ search }) => {
   return (
     <div className="container-fluid px-4">
       <div className="d-flex justify-content-between">
@@ -29,6 +29,12 @@ const MyMain = () => {
           <i className="bi bi-grid-3x3 icons"></i>
         </div>
       </div>
+      {search && (
+        <>
+          <h4>{search}</h4>
+          <MyCarouselSlick filmName={search} type="movie" page="1" />
+        </>
+      )}
       <h4>Trending Now</h4>
       <MyCarouselSlick filmName="Star Wars" type="movie" page="1" />
       <h4>Watch it Again</h4>

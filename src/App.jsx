@@ -12,15 +12,18 @@ import { Container } from 'react-bootstrap'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MyCarouselSlick from './components/MyCarouselSlick'
 import MoveDetails from './components/MoveDetails'
+import { useState } from 'react'
 
 function App() {
+  const [search, setSearch] = useState('')
+
   return (
     <div className="App">
       <BrowserRouter>
         <Container>
-          <MyNavbar />
+          <MyNavbar setSearch={setSearch} />
           <Routes>
-            <Route path="/" element={<MyMain />} />
+            <Route path="/" element={<MyMain search={search} />} />
             <Route
               path="/TVShows"
               element={

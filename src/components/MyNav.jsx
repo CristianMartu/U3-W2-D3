@@ -1,9 +1,18 @@
-import { Container, Dropdown, DropdownButton, Image, Nav, Navbar } from 'react-bootstrap'
+import { Button, Container, Dropdown, DropdownButton, Form, Image, Nav, Navbar } from 'react-bootstrap'
 import logo from '../assets/logo.png'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
-const MyNavbar = (props) => {
+const MyNavbar = ({ setSearch }) => {
   const navigate = useNavigate()
+
+  const [text, setText] = useState('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setSearch(text)
+    setText('')
+  }
 
   return (
     <Navbar expand="lg" data-bs-theme="dark" style={{ backgroundColor: '#221f1f !important' }}>
@@ -32,7 +41,17 @@ const MyNavbar = (props) => {
             </Nav.Link>
           </div>
           <div className="d-flex align-items-center">
-            <i className="bi bi-search icons"></i>
+            <Form onSubmit={handleSubmit} className="d-flex justify-content-end align-items-center">
+              <Form.Control
+                type="text"
+                onChange={(e) => setText(e.target.value)}
+                value={text}
+                placeholder="Search movie..."
+              />
+              <Button type="submit" variant="dark" className="rounded-end me-2">
+                <i className="bi bi-search icons mx-0"></i>
+              </Button>
+            </Form>
             <DropdownButton id="dropdown-basic-button" title="KIDS" variant="dark">
               <Dropdown.Item eventKey="1">
                 <i className="bi bi-person-circle icons ms-0"></i>
